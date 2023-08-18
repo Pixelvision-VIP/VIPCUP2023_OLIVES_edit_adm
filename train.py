@@ -8,6 +8,7 @@ from config import parse_option
 import os
 from utils import set_loader, set_model, set_optimizer, adjust_learning_rate
 
+global output_csv_name='a'
 
 def train_supervised(train_loader, model,criterion, optimizer, epoch, opt):
     """one epoch training"""
