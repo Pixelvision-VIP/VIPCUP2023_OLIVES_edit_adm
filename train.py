@@ -8,7 +8,6 @@ from config import parse_option
 import os
 from utils import set_loader, set_model, set_optimizer, adjust_learning_rate
 
-global output_csv_name='a'
 
 def train_supervised(train_loader, model,criterion, optimizer, epoch, opt):
     """one epoch training"""
@@ -130,7 +129,7 @@ def main():
         opt.save_folder, 'last.pth')
     save_model(model, optimizer, opt, opt.epochs, save_file)
 
-    global output_csv_name='a'#str(model)#+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
+   # global output_csv_name='a'#str(model)#+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
 
 if __name__ == '__main__':
     main()
