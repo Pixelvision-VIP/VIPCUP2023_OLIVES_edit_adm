@@ -1,5 +1,5 @@
 import torch
-from utils import AverageMeter,save_model
+from utils import AverageMeter,save_model,output_state
 import sys
 import time
 import numpy as np
@@ -128,6 +128,8 @@ def main():
     save_file = os.path.join(
         opt.save_folder, 'last.pth')
     save_model(model, optimizer, opt, opt.epochs, save_file)
+
+    output_state('Res',1,1)
 
    # global output_csv_name='a'#str(model)#+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
 
