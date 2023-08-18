@@ -166,4 +166,4 @@ def save_model(model, optimizer, opt, epoch, save_file):
 def output_state(model,batch_size,epochs):
     output_string=str(model)
     print(output_string)
-    return None
+    return output_string
