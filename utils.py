@@ -162,3 +162,7 @@ def save_model(model, optimizer, opt, epoch, save_file):
     }
     torch.save(state, save_file)
     del state
+
+def output_state(model,batch_size,epochs):
+    output_string=str(model)
+    return output_string
