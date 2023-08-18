@@ -133,6 +133,6 @@ def main():
     a = output_state(opt.model,1,1)
 
    # global output_csv_name='a'#str(model)#+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
-    return a
+   # return a
 if __name__ == '__main__':
     main()
