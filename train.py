@@ -129,7 +129,7 @@ def main():
         opt.save_folder, 'last.pth')
     save_model(model, optimizer, opt, opt.epochs, save_file)
 
-    output_csv_name=str(model)+str(opt.epochs)+str(opt.bcz) #this line is added to output name for csv
+    output_csv_name=str(model)+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
 
 if __name__ == '__main__':
     main()
