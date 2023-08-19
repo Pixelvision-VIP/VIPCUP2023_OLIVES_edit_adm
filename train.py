@@ -132,9 +132,11 @@ def main():
     global output_csv_name
     output_csv_name=output_state(opt.model,opt.batch_size,opt.epochs)
     
-    # Write output_csv_name to a text file
-    with open('output_csv_name.txt', 'w') as file:
+    # Write output_csv_name to a text file in the same directory as save_file
+    txt_file_path = os.path.join(opt.save_folder, 'output_csv_name.txt')
+    with open(txt_file_path, 'w') as file:
         file.write(output_csv_name)
+
 
    # global output_csv_name='a'#str(model)#+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
    # return a
