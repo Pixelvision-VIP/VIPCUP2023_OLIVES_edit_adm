@@ -129,8 +129,9 @@ def main():
         opt.save_folder, 'last.pth')
     save_model(model, optimizer, opt, opt.epochs, save_file)
 
-    global a 
-    print(output_state(opt.model,opt.batch_size,opt.epochs))
+    global output_csv_name
+    output_csv_name=output_state(opt.model,opt.batch_size,opt.epochs)
+    
 
    # global output_csv_name='a'#str(model)#+str(opt.epochs)+str(opt.batch_size) #this line is added to output name for csv.use this vairable only.
    # return a
