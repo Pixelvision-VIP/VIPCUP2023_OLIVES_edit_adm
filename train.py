@@ -136,7 +136,7 @@ def main():
     try:
         with open(txt_file_path, 'w') as file:
             file.write(output_csv_name)
-        print("File created successfully.")
+        print("csv name file created successfully.")
     except Exception as e:
         print("Error creating file:", e)
 
