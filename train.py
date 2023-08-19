@@ -54,7 +54,10 @@ def train_supervised(train_loader, model,criterion, optimizer, epoch, opt):
                 epoch, idx + 1, len(train_loader)))
 
             sys.stdout.flush()
-
+## dd
+            # Calculate and print F1 score
+    sample_evaluation(train_loader, model, opt)
+## dd
     return losses.avg
 
 def submission_generate(val_loader, model, opt):
@@ -121,6 +124,13 @@ def main():
     # training routine
     for epoch in range(1, opt.epochs + 1):
         train_supervised(train_loader, model, criterion, optimizer, epoch, opt)
+
+    # Print train loss after each epoch
+        print(f"Epoch [{epoch}/{opt.epochs}] - Train Loss: {train_loss:.4f}")
+        
+        # Evaluate model's training and print F1 score
+        sample_evaluation(train_loader, model, opt)
+
 
     submission_generate(test_loader, model, opt)
     #sample_evaluation(test_loader, model, opt)
