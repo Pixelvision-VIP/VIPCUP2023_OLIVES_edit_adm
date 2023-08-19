@@ -56,7 +56,7 @@ def train_supervised(train_loader, model,criterion, optimizer, epoch, opt):
             sys.stdout.flush()
 ## dd
             # Calculate and print F1 score
-    sample_evaluation(train_loader, model, opt)
+   # sample_evaluation(train_loader, model, opt)
 ## dd
     return losses.avg
 
@@ -124,14 +124,14 @@ def main():
     # training routine
     for epoch in range(1, opt.epochs + 1):
         train_supervised(train_loader, model, criterion, optimizer, epoch, opt)
-
+    '''
     # Print train loss after each epoch
         print(f"Epoch [{epoch}/{opt.epochs}] - Train Loss: {train_loss:.4f}")
         
         # Evaluate model's training and print F1 score
         sample_evaluation(train_loader, model, opt)
 
-
+    '''
     submission_generate(test_loader, model, opt)
     #sample_evaluation(test_loader, model, opt)
 
