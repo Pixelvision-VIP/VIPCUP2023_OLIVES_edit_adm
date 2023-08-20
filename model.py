@@ -14,6 +14,12 @@ class ResNet(nn.Module):
             self.encoder.fc = nn.Identity()
             self.fc = nn.Linear(2048, num_classes)
 
+        elif(name == 'resnet34'):##dd
+            self.encoder = torchvision.models.resnet101(zero_init_residual=True)
+            self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+            self.encoder.fc = nn.Identity()
+            self.fc = nn.Linear(512, num_classes)
+
         elif(name == 'resnet101'):##dd
             self.encoder = torchvision.models.resnet101(zero_init_residual=True)
             self.encoder.conv1 = nn.Conv2d(1, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
