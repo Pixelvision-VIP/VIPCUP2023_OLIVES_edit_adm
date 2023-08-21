@@ -158,8 +158,7 @@ betas = (opt.momentum, 0.999)  # Using the momentum value for beta1 in Adam
 optimizer = optim.Adam(model.parameters(), lr=opt.learning_rate, betas=betas, weight_decay=opt.weight_decay)
     '''
     optimizer = optim.adam(model.parameters(),
-                          lr=opt.learning_rate,
-                          
+                          lr=opt.learning_rate,                          
                           weight_decay=opt.weight_decay)
     
 
