@@ -142,12 +142,26 @@ def warmup_learning_rate(args, epoch, batch_id, total_batches, optimizer):
 
 
 def set_optimizer(opt, model):
-
+    '''
     optimizer = optim.SGD(model.parameters(),
                           lr=opt.learning_rate,
                           momentum=opt.momentum,
                           weight_decay=opt.weight_decay)
+    '''
+    '''
+    model = torch.nn.Linear(10, 2)
+opt = argparse.Namespace(learning_rate=0.001, momentum=0.9, weight_decay=0.0001)
 
+# Assuming opt.momentum corresponds to the desired momentum value for Adam
+betas = (opt.momentum, 0.999)  # Using the momentum value for beta1 in Adam
+
+optimizer = optim.Adam(model.parameters(), lr=opt.learning_rate, betas=betas, weight_decay=opt.weight_decay)
+    '''
+    optimizer = optim.adam(model.parameters(),
+                          lr=opt.learning_rate,
+                          
+                          weight_decay=opt.weight_decay)
+    
 
     return optimizer
 
